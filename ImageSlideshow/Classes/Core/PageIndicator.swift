@@ -37,6 +37,7 @@ extension UIPageControl: PageIndicatorView {
         var frame = self.frame
         frame.size = size(forNumberOfPages: numberOfPages)
         frame.size.height = 30
+         frame.size.width += 15
         self.frame = frame
     }
 }
@@ -80,8 +81,5 @@ public class LabelPageIndicator: UILabel, PageIndicatorView {
     public override func sizeToFit() {
         let maximumString = String(repeating: "8", count: numberOfPages) as NSString
         self.frame.size = maximumString.size(withAttributes: [.font: font])
-           frame.size.height = 20
-         frame.size.width += 15
-
     }
 }
